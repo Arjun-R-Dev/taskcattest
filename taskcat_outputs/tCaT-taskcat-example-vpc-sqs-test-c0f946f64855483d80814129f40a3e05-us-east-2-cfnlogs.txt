@@ -1,0 +1,120 @@
+-----------------------------------------------------------------------------
+Region: us-east-2
+StackName: tCaT-taskcat-example-vpc-sqs-test-c0f946f64855483d80814129f40a3e05
+*****************************************************************************
+ResourceStatusReason:  
+The following resource(s) failed to create: [MyVPCRouteTablePublicRoute1B,
+MyVPCRouteTablePublicRoute1A, MyVPCIGWAttachment, MyVPCNatGw1B, MyVPCNatGw1A,
+MyVPCRouteTablePublicRoute1C].
+*****************************************************************************
+*****************************************************************************
+Events:  
+TimeStamp                         ResourceStatus      ResourceType                           LogicalResourceId                                                   ResourceStatusReason
+--------------------------------  ------------------  -------------------------------------  ------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2021-02-26 14:15:55.249000+00:00  CREATE_FAILED       AWS::CloudFormation::Stack             tCaT-taskcat-example-vpc-sqs-test-c0f946f64855483d80814129f40a3e05  The following resource(s) failed to create: [MyVPCRouteTablePublicRoute1B, MyVPCRouteTablePublicRoute1A, MyVPCIGWAttachment, MyVPCNatGw1B, MyVPCNatGw1A, MyVPCRouteTablePublicRoute1C].
+2021-02-26 14:15:54.520000+00:00  CREATE_FAILED       AWS::EC2::NatGateway                   MyVPCNatGw1A                                                        Resource creation cancelled
+2021-02-26 14:15:54.514000+00:00  CREATE_FAILED       AWS::EC2::Route                        MyVPCRouteTablePublicRoute1B                                        Resource creation cancelled
+2021-02-26 14:15:54.506000+00:00  CREATE_FAILED       AWS::EC2::NatGateway                   MyVPCNatGw1B                                                        Resource creation cancelled
+2021-02-26 14:15:54.498000+00:00  CREATE_FAILED       AWS::EC2::VPCGatewayAttachment         MyVPCIGWAttachment                                                  Resource creation cancelled
+2021-02-26 14:15:54.094000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        MyVPCRouteTablePublicRoute1B                                        Resource creation Initiated
+2021-02-26 14:15:54.055000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCGatewayAttachment         MyVPCIGWAttachment                                                  Resource creation Initiated
+2021-02-26 14:15:54.052000+00:00  CREATE_FAILED       AWS::EC2::Route                        MyVPCRouteTablePublicRoute1A                                        route table rtb-0d6a179f829bab2d2 and network gateway igw-03bcf7292a1788af7 belong to different networks (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterValue; Request ID: 575d77ff-e6a2-4cc5-87ac-44abe5ea215b; Proxy: null)
+2021-02-26 14:15:53.998000+00:00  CREATE_FAILED       AWS::EC2::Route                        MyVPCRouteTablePublicRoute1C                                        route table rtb-0f17d043bea3b141a and network gateway igw-03bcf7292a1788af7 belong to different networks (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterValue; Request ID: 43c4ef34-7b99-457f-8c10-cf7ce0f4db53; Proxy: null)
+2021-02-26 14:15:53.745000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPCGatewayAttachment         MyVPCIGWAttachment
+2021-02-26 14:15:53.702000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        MyVPCRouteTablePublicRoute1B
+2021-02-26 14:15:53.638000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        MyVPCRouteTablePublicRoute1A
+2021-02-26 14:15:53.591000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Route                        MyVPCRouteTablePublicRoute1C
+2021-02-26 14:15:52.168000+00:00  CREATE_COMPLETE     AWS::EC2::InternetGateway              MyVPCIgw
+2021-02-26 14:15:51.802000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePublicAssociation1B
+2021-02-26 14:15:51.223000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association3B
+2021-02-26 14:15:50.938000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association2A
+2021-02-26 14:15:50.912000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association2B
+2021-02-26 14:15:50.907000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association4A
+2021-02-26 14:15:50.884000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association3A
+2021-02-26 14:15:50.824000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association1B
+2021-02-26 14:15:50.823000+00:00  CREATE_COMPLETE     AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePublicAssociation1A
+2021-02-26 14:15:36.477000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePublicAssociation1B                                  Resource creation Initiated
+2021-02-26 14:15:35.992000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association3B                                Resource creation Initiated
+2021-02-26 14:15:35.821000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePublicAssociation1B
+2021-02-26 14:15:35.752000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   MyVPCNatGw1B                                                        Resource creation Initiated
+2021-02-26 14:15:35.661000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association2B                                Resource creation Initiated
+2021-02-26 14:15:35.599000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association2A                                Resource creation Initiated
+2021-02-26 14:15:35.562000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association3A                                Resource creation Initiated
+2021-02-26 14:15:35.550000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePublicAssociation1A                                  Resource creation Initiated
+2021-02-26 14:15:35.535000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association4A                                Resource creation Initiated
+2021-02-26 14:15:35.508000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association1B                                Resource creation Initiated
+2021-02-26 14:15:35.417000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   MyVPCNatGw1A                                                        Resource creation Initiated
+2021-02-26 14:15:35.312000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   MyVPCNatGw1B
+2021-02-26 14:15:35.211000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association3B
+2021-02-26 14:15:35.116000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association2B
+2021-02-26 14:15:35.065000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association2A
+2021-02-26 14:15:35.004000+00:00  CREATE_IN_PROGRESS  AWS::EC2::NatGateway                   MyVPCNatGw1A
+2021-02-26 14:15:34.999000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association4A
+2021-02-26 14:15:34.988000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association3A
+2021-02-26 14:15:34.977000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePublicAssociation1A
+2021-02-26 14:15:34.918000+00:00  CREATE_IN_PROGRESS  AWS::EC2::SubnetRouteTableAssociation  MyVPCRouteTablePrivate1Association1B
+2021-02-26 14:15:33.544000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet1B
+2021-02-26 14:15:33.542000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet2B
+2021-02-26 14:15:33.509000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet4A
+2021-02-26 14:15:33.507000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet4B
+2021-02-26 14:15:33.507000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet2A
+2021-02-26 14:15:33.495000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet1A
+2021-02-26 14:15:33.492000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet3A
+2021-02-26 14:15:33.483000+00:00  CREATE_COMPLETE     AWS::EC2::Subnet                       MyVPCSubnet3B
+2021-02-26 14:15:19.035000+00:00  CREATE_COMPLETE     AWS::EC2::FlowLog                      MyVPCFlowLogs
+2021-02-26 14:15:18.783000+00:00  CREATE_IN_PROGRESS  AWS::EC2::FlowLog                      MyVPCFlowLogs                                                       Resource creation Initiated
+2021-02-26 14:15:18.071000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   MyVPCRouteTablePublic1C
+2021-02-26 14:15:18.002000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   MyVPCRouteTablePublic1B
+2021-02-26 14:15:17.876000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   MyVPCRouteTablePrivate1B
+2021-02-26 14:15:17.821000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet1B                                                       Resource creation Initiated
+2021-02-26 14:15:17.796000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   MyVPCRouteTablePublic1A
+2021-02-26 14:15:17.717000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet4B                                                       Resource creation Initiated
+2021-02-26 14:15:17.694000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet2A                                                       Resource creation Initiated
+2021-02-26 14:15:17.687000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet4A                                                       Resource creation Initiated
+2021-02-26 14:15:17.687000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet1A                                                       Resource creation Initiated
+2021-02-26 14:15:17.685000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet3B                                                       Resource creation Initiated
+2021-02-26 14:15:17.685000+00:00  CREATE_COMPLETE     AWS::EC2::RouteTable                   MyVPCRouteTablePrivate1A
+2021-02-26 14:15:17.682000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet2B                                                       Resource creation Initiated
+2021-02-26 14:15:17.679000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet3A                                                       Resource creation Initiated
+2021-02-26 14:15:17.288000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet3A
+2021-02-26 14:15:17.287000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePublic1C                                             Resource creation Initiated
+2021-02-26 14:15:17.277000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePublic1B                                             Resource creation Initiated
+2021-02-26 14:15:17.215000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet2A
+2021-02-26 14:15:17.192000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePrivate1B                                            Resource creation Initiated
+2021-02-26 14:15:17.187000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet4A
+2021-02-26 14:15:17.162000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet4B
+2021-02-26 14:15:17.138000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet3B
+2021-02-26 14:15:17.135000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePublic1A                                             Resource creation Initiated
+2021-02-26 14:15:17.094000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet1A
+2021-02-26 14:15:17.080000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet2B
+2021-02-26 14:15:17.071000+00:00  CREATE_IN_PROGRESS  AWS::EC2::Subnet                       MyVPCSubnet1B
+2021-02-26 14:15:17.030000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePrivate1A                                            Resource creation Initiated
+2021-02-26 14:15:17.027000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePublic1C
+2021-02-26 14:15:17.003000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePublic1B
+2021-02-26 14:15:16.970000+00:00  CREATE_IN_PROGRESS  AWS::EC2::FlowLog                      MyVPCFlowLogs
+2021-02-26 14:15:16.858000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePrivate1B
+2021-02-26 14:15:16.847000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePublic1A
+2021-02-26 14:15:16.569000+00:00  CREATE_IN_PROGRESS  AWS::EC2::RouteTable                   MyVPCRouteTablePrivate1A
+2021-02-26 14:15:16.238000+00:00  CREATE_COMPLETE     AWS::EC2::EIP                          MyVPCNatGw1ElasticIPA
+2021-02-26 14:15:15.776000+00:00  CREATE_COMPLETE     AWS::EC2::EIP                          MyVPCNatGw1ElasticIPB
+2021-02-26 14:15:15.017000+00:00  CREATE_COMPLETE     AWS::EC2::VPC                          MyVPCVPC
+2021-02-26 14:15:14.807000+00:00  CREATE_COMPLETE     AWS::IAM::Role                         MyVPCIamRoleForFlowLogs
+2021-02-26 14:15:00.268000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          MyVPCNatGw1ElasticIPA                                               Resource creation Initiated
+2021-02-26 14:14:59.905000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          MyVPCNatGw1ElasticIPB                                               Resource creation Initiated
+2021-02-26 14:14:59.759000+00:00  CREATE_COMPLETE     AWS::Logs::LogGroup                    MyVPCFlowLogsGroup
+2021-02-26 14:14:59.504000+00:00  CREATE_IN_PROGRESS  AWS::Logs::LogGroup                    MyVPCFlowLogsGroup                                                  Resource creation Initiated
+2021-02-26 14:14:58.805000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPC                          MyVPCVPC                                                            Resource creation Initiated
+2021-02-26 14:14:58.449000+00:00  CREATE_IN_PROGRESS  AWS::EC2::InternetGateway              MyVPCIgw                                                            Resource creation Initiated
+2021-02-26 14:14:58.324000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role                         MyVPCIamRoleForFlowLogs                                             Resource creation Initiated
+2021-02-26 14:14:58.295000+00:00  CREATE_IN_PROGRESS  AWS::EC2::VPC                          MyVPCVPC
+2021-02-26 14:14:58.129000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          MyVPCNatGw1ElasticIPA
+2021-02-26 14:14:58.113000+00:00  CREATE_IN_PROGRESS  AWS::EC2::InternetGateway              MyVPCIgw
+2021-02-26 14:14:57.948000+00:00  CREATE_IN_PROGRESS  AWS::Logs::LogGroup                    MyVPCFlowLogsGroup
+2021-02-26 14:14:57.784000+00:00  CREATE_IN_PROGRESS  AWS::IAM::Role                         MyVPCIamRoleForFlowLogs
+2021-02-26 14:14:57.757000+00:00  CREATE_IN_PROGRESS  AWS::EC2::EIP                          MyVPCNatGw1ElasticIPB
+2021-02-26 14:14:48.847000+00:00  CREATE_IN_PROGRESS  AWS::CloudFormation::Stack             tCaT-taskcat-example-vpc-sqs-test-c0f946f64855483d80814129f40a3e05  User Initiated
+*****************************************************************************
+-----------------------------------------------------------------------------
+Tested on: Friday, 26. February 2021 02:16PM
+-----------------------------------------------------------------------------
+

@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Template consuming VPC Wizard module
+
+Resources:
+    MyVPC: 
+      Type: DocufreePoc::VPC::DevVpc::MODULE
+      Properties:
+        CidrBlock: 10.60.48.0/16
+        Subnet2Create: true
+        Subnet2Route: private
+        TagPrefix: Dev
+        NumberOfAZs: 2
+        NameOfSubnet1: public
+        NameOfSubnet2: app
+        NameOfSubnet3: management
+        NameOfSubnet4: db
+        CostcenterTag: dev
+        CreateNat: true
+        
