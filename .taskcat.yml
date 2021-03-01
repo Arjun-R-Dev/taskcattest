@@ -1,0 +1,7 @@
+project:
+  name: taskcat-example-vpc
+  regions:
+    - us-east-2
+tests:
+  sqs-test:
+    template: ./vpc.yml
