@@ -32,11 +32,11 @@ Metadata:
     ParameterLabels:
       GitHubToken:
         default: GitHub OAuth2 Token
-      GitHubUser: 
+      GitHubUser:
         default: GitHub User/Org Name
-      GitHubRepo: 
+      GitHubRepo:
         default: GitHub Repository Name
-      GitHubBranch: 
+      GitHubBranch:
         default: GitHub Branch Name
 Resources:
   SiteBucket:
@@ -126,6 +126,33 @@ Resources:
             Effect: Allow
             Resource: "*"
           Version: '2012-10-17'
+  CodeBuildSetup:
+    Type: AWS::CodeBuild::Project
+    DependsOn: CodeBuildRole
+    Properties:
+      Description: Setup Test Files. For example uploading to S3
+      ServiceRole: !GetAtt CodeBuildRole.Arn
+      Artifacts:
+        Type: NO_ARTIFACTS
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
+        EnvironmentVariables:
+          - Name: PIPELINE_BUCKET
+            Type: PLAINTEXT
+            Value:
+              Fn::Sub: ${PipelineBucket}
+      Source:
+        Type: GITHUB
+        Location: !Sub https://github.com/${GitHubUser}/${GitHubRepo}.git
+        BuildSpec: buildspec.yml
+      TimeoutInMinutes: 10
+      
+      
+      
+      
+      
   CodeBuildTaskCatTest:
     Type: AWS::CodeBuild::Project
     DependsOn: CodeBuildRole
@@ -141,6 +168,8 @@ Resources:
       Source:
         Type: CODEPIPELINE
       TimeoutInMinutes: 60
+      
+      
   CodeBuildDashboard:
     Type: AWS::CodeBuild::Project
     DependsOn: CodeBuildRole
@@ -163,15 +192,19 @@ Resources:
                 python: 3.7
             post_build:
               commands:
-                - aws s3 cp --recursive --acl public-read ./taskcat_outputs s3://${SiteBucket}/ 
+                - aws s3 cp --recursive --acl public-read ./taskcat_outputs s3://${SiteBucket}/
           artifacts:
             type: zip
             files:
               - ./index.html
       TimeoutInMinutes: 10
+      
+      
   PipelineBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Delete
+    
+    
   Pipeline:
     Type: AWS::CodePipeline::Pipeline
     Properties:
@@ -197,6 +230,20 @@ Resources:
       - Name: Build
         Actions:
         - InputArtifacts:
+          - Name: SourceArtifacts
+          Name: Setup
+          ActionTypeId:
+            Category: Test
+            Owner: AWS
+            Version: '1'
+            Provider: CodeBuild
+          OutputArtifacts:
+          - Name: SetupArtifacts
+          Configuration:
+            ProjectName:
+              Ref: CodeBuildSetup
+          RunOrder: 1
+        - InputArtifacts:
           - Name: SetupArtifacts
           Name: RunTaskCat
           ActionTypeId:
@@ -204,7 +251,7 @@ Resources:
             Owner: AWS
             Version: '1'
             Provider: CodeBuild
-          OutputArtifacts: 
+          OutputArtifacts:
           - Name: TaskCatArtifacts
           Configuration:
             ProjectName:
@@ -218,7 +265,7 @@ Resources:
             Owner: AWS
             Version: '1'
             Provider: CodeBuild
-          OutputArtifacts: [] 
+          OutputArtifacts: []
           Configuration:
             ProjectName:
               Ref: CodeBuildDashboard
@@ -226,6 +273,9 @@ Resources:
       ArtifactStore:
         Type: S3
         Location: !Ref PipelineBucket
+        
+        
+        
 Outputs:
   PipelineUrl:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
