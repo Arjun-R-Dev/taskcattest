@@ -16,6 +16,7 @@ phases:
       - echo Build phase started on `date`
       # - taskcat test run --no-delete
       # - taskcat test run -k
+      - echo -e "[profile test] \nrole_arn = arn:aws:iam::869862938706:role/sandbox-switch \ncredential_source = Ec2InstanceMetadata \nrole_session_name = cross-account-test" >> $HOME/.aws/credentials
       - taskcat test run --no-delete
   post_build:
     commands:

@@ -1,4 +1,6 @@
 project:
+  auth:
+  us-east-2: test
   name: taskcat-example-vpc
   regions:
     - us-east-2
