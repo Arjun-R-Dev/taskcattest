@@ -18,6 +18,9 @@ phases:
       # - taskcat test run -k
       - aws --version
       - ls -a $HOME/
+      - mkdir $HOME/.aws
+      - touch $HOME/.aws/credentials
+      - touch $HOME/.aws/config
       - echo -e "[profile test]" >> $HOME/.aws/credentials
       - echo -e "role_arn = arn:aws:iam::869862938706:role/sandbox-switch" >> $HOME/.aws/credentials
       - echo -e "credential_source = Ec2InstanceMetadata" >> $HOME/.aws/credentials 
