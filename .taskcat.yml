@@ -7,3 +7,4 @@ project:
 tests:
   sqs-test:
     template: ./vpc.yml
+    s3_bucket: taskcattestarjun
