@@ -16,4 +16,3 @@ Resources:
         NameOfSubnet4: db
         CostcenterTag: dev
         CreateNat: true
-        
