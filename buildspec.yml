@@ -17,7 +17,7 @@ phases:
       # - taskcat test  run --no-delete
       # - taskcat test run -k 
       - aws --version
-      - ls -a $HOME/
+      - aws sts get-caller-identity
       - mkdir $HOME/.aws
       - touch $HOME/.aws/credentials
       - touch $HOME/.aws/config
