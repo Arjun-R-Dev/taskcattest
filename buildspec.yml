@@ -28,6 +28,7 @@ phases:
       - echo -e "credential_source = Ec2InstanceMetadata" >> $HOME/.aws/credentials 
       - echo -e "role_session_name = cross-account-test" >> $HOME/.aws/credential
       - cat $HOME/.aws/credentials
+      - cat $HOME/.aws/config
       - aws sts get-caller-identity --profile test
       - taskcat test run --no-delete
   post_build:
