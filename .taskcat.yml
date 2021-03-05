@@ -1,12 +1,22 @@
-project:
+#project:
         #auth:
         #us-east-2: test
-  name: taskcat-example-vpc
-  regions:
-    - us-east-2
-tests:
-  sqs-test:
-    auth:
-      us-east-2: test
-    template: ./vpc.yml
+        #  name: taskcat-example-vpc
+        #regions:
+        # - us-east-2
+        #tests:
+        #sqs-test:
+        #auth:
+            # us-east-2: test
+            #template: ./vpc.yml
     # s3_bucket: taskcattestarjun
+general:
+  auth:
+    us-east-2: test
+project:
+  name: cft-test
+tests:
+  mytest:
+    template: ./vpc.yml
+    parameters: 
+      S3BucketName: '$[taskcat_autobucket]'
