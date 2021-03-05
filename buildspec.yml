@@ -18,7 +18,7 @@ phases:
       # - taskcat test run -k 
       - aws --version
       - aws sts get-caller-identity
-      - aws sts get-caller-identity --profile test
+        #- aws sts get-caller-identity --profile test
       - mkdir $HOME/.aws
       - touch $HOME/.aws/credentials
       - touch $HOME/.aws/config
@@ -26,6 +26,7 @@ phases:
       - echo -e "[test]" >> $HOME/.aws/credentials
       - echo -e "role_arn = arn:aws:iam::869862938706:role/sandbox-switch" >> $HOME/.aws/credentials
       - echo -e "credential_source = Ec2InstanceMetadata" >> $HOME/.aws/credentials 
+      - aws sts get-caller-identity --profile test
       - taskcat test run --no-delete
   post_build:
     commands:
