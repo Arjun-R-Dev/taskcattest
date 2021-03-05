@@ -18,6 +18,7 @@ phases:
       # - taskcat test run -k 
       - aws --version
       - aws sts get-caller-identity
+      - aws sts get-caller-identity --profile test
       - mkdir $HOME/.aws
       - touch $HOME/.aws/credentials
       - touch $HOME/.aws/config
