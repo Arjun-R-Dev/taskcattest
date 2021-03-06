@@ -98,6 +98,8 @@ Resources:
           Action:
           - sts:AssumeRole
       Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
       Policies:
       - PolicyName: codebuild-service
         PolicyDocument:
@@ -106,7 +108,6 @@ Resources:
             - apigateway:*
             - cloudformation:*
             - cloudwatch:*
-            - *:*
             - cloudtrail:*
             - codebuild:*
             - codecommit:*
