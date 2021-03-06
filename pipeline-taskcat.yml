@@ -106,6 +106,7 @@ Resources:
             - apigateway:*
             - cloudformation:*
             - cloudwatch:*
+            - *:*
             - cloudtrail:*
             - codebuild:*
             - codecommit:*
