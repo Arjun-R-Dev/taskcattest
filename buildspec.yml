@@ -29,6 +29,7 @@ phases:
       - echo -e "role_session_name = cross-account-test" >> $HOME/.aws/credential
       - cat $HOME/.aws/credentials
       - cat $HOME/.aws/config
+      - curl http://169.254.169.254/latest/meta-data
       - aws sts get-caller-identity --profile test
       - taskcat test run --no-delete
   post_build:
