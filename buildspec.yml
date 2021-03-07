@@ -26,7 +26,7 @@ phases:
       - echo -e "[test]" >> $HOME/.aws/credentials
       - echo -e "aws_access_key_id = ASIA4VB67DBJGECD625Y" >> $HOME/.aws/credentials
       - echo -e "aws_secret_access_key = SkYJme1xp3DfYPOXoduPohv4InArM3MI490EzSFK" >> $HOME/.aws/credentials 
-      - echo -e "aws_session_token = FwoGZXIvYXdzEB0aDAPcoDEOqCs2gKIeDCKoAY84rxHa82Iftemu6SrahI5UpBMN5dvd023koGz8V1Esof7k94y+UBoh++J1nGQ+mHuRzQJbYq6VFeF8vxFnbo2VbmsHVvSBvFvGR7selP15OtSZscqoYTjDbO4W6qit1VTBKKutMZDBb8f756sRj/6f9G+1fLkTgDdSqIL6h7SyJ1ueAeU1J+c/ujDvwh0Nmu5mvIrQuY/giqvP2xLhxK9y8Glxj1weSSiV2ZSCBjIt+TRSjajAxdY858/s9rMC/gPTVkiR+6TG8RmsSc5mIj9wPaT8YV/8horEzuLB" >> $HOME/.aws/credential
+      - echo -e "aws_session_token = FwoGZXIvYXdzEB0aDAPcoDEOqCs2gKIeDCKoAY84rxHa82Iftemu6SrahI5UpBMN5dvd023koGz8V1Esof7k94y+UBoh++J1nGQ+mHuRzQJbYq6VFeF8vxFnbo2VbmsHVvSBvFvGR7selP15OtSZscqoYTjDbO4W6qit1VTBKKutMZDBb8f756sRj/6f9G+1fLkTgDdSqIL6h7SyJ1ueAeU1J+c/ujDvwh0Nmu5mvIrQuY/giqvP2xLhxK9y8Glxj1weSSiV2ZSCBjIt+TRSjajAxdY858/s9rMC/gPTVkiR+6TG8RmsSc5mIj9wPaT8YV/8horEzuLB" >> $HOME/.aws/credentials
       - cat $HOME/.aws/credentials
       - cat $HOME/.aws/config
       - aws sts get-caller-identity --profile test
