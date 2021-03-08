@@ -154,35 +154,7 @@ Resources:
      
       
       
-  CodeBuildDashboard:
-    Type: AWS::CodeBuild::Project
-    DependsOn: CodeBuildRole
-    Properties:
-      Description: Deploy site to S3
-      ServiceRole: !GetAtt CodeBuildRole.Arn
-      Artifacts:
-        Type: CODEPIPELINE
-      Environment:
-        Type: LINUX_CONTAINER
-        ComputeType: BUILD_GENERAL1_SMALL
-        Image: "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
-      Source:
-        Type: CODEPIPELINE
-        BuildSpec: !Sub |
-          version: 0.2
-          phases:
-            install:
-              runtime-versions:
-                python: 3.7
-            post_build:
-              commands:
-                - aws s3 cp --recursive --acl public-read ./taskcat_outputs s3://${SiteBucket}/
-          artifacts:
-            type: zip
-            files:
-              - ./index.html
-      TimeoutInMinutes: 10
-      
+       
       
   PipelineBucket:
     Type: AWS::S3::Bucket
@@ -227,19 +199,6 @@ Resources:
             ProjectName:
               Ref: CodeBuildSetup
           RunOrder: 1
-        - InputArtifacts:
-          - Name: TaskCatArtifacts
-          Name: TaskCatDashboard
-          ActionTypeId:
-            Category: Test
-            Owner: AWS
-            Version: '1'
-            Provider: CodeBuild
-          OutputArtifacts: []
-          Configuration:
-            ProjectName:
-              Ref: CodeBuildDashboard
-          RunOrder: 20
       ArtifactStore:
         Type: S3
         Location: !Ref PipelineBucket
@@ -250,6 +209,3 @@ Outputs:
   PipelineUrl:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
     Description: CodePipeline URL
-  TaskCatDashboardUrl:
-    Value: !Sub http://${SiteBucket}.s3-website-us-east-1.amazonaws.com
-    Description: URL for TaskCat Dashboard (Available after the CodePipeline completes)
